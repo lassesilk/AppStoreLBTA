@@ -11,11 +11,7 @@ import UIKit
 class AppFullScreenHeaderCell: UITableViewCell {
     
     
-    let closeButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setImage(#imageLiteral(resourceName: "close_button"), for: .normal)
-        return button
-    }()
+   
     
     let todayCell = TodayCell()
     
@@ -24,10 +20,6 @@ class AppFullScreenHeaderCell: UITableViewCell {
         
         addSubview(todayCell)
         todayCell.fillSuperview()
-        
-        addSubview(closeButton)
-        closeButton.anchor(top: topAnchor, leading: nil, bottom: nil, trailing: trailingAnchor, padding: .init(top: 44, left: 0, bottom: 0, right: 12), size: CGSize(width: 80, height: 38))
-        
     }
     
     required init?(coder aDecoder: NSCoder) {

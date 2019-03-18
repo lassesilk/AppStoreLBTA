@@ -18,6 +18,7 @@ class TodayCell: BaseTodayCell {
             descriptionLabel.text = todayItem.description
             
             backgroundColor = todayItem.backgroundColor
+            backgroundView?.backgroundColor = todayItem.backgroundColor
         }
     }
     
@@ -35,8 +36,12 @@ class TodayCell: BaseTodayCell {
         
         backgroundColor = .white
         layer.cornerRadius = 16
-        clipsToBounds = true
+        
+        //Clips shadow also
+//        clipsToBounds = true
+        
         imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         
         let imageContainerView = UIView()
         imageContainerView.addSubview(imageView)
@@ -51,7 +56,7 @@ class TodayCell: BaseTodayCell {
         
         addSubview(stackView)
         stackView.anchor(top: nil, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: .init(top: 24, left: 24, bottom: 24, right: 24))
-        self.topConstraint = stackView.topAnchor.constraint(equalTo: topAnchor, constant: 24)
+        self.topConstraint = stackView.topAnchor.constraint(equalTo: topAnchor, constant: 32)
         self.topConstraint.isActive = true
     }
     
